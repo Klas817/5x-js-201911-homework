@@ -25,9 +25,27 @@
         lottery() 若是未傳入參數則預設印出一組樂透數字。
     */
 
-    var lottery = function () {
+    var getLottery = function(count){
+    if (typeof count === 'undefined'){
+      count = 1
+    };
+    
+    for( t = 1; t<= count; t++ ){
+      var lottery = [];
+      var number;
+      
+      while( lottery.length < 6 ){
+        
+        number = parseInt( Math.random() * 49 + 1, 10 );
+        
+        if( lottery.indexOf( number ) === -1 ){
+          lottery.push( number );
+        };
+      };
+      console.log (lottery);
+     };
 
-    }
+     };
 
   </script>
 
